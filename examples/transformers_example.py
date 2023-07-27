@@ -9,7 +9,8 @@ class TransformesExample:
     
     def classification(self, text:str, labels:array) -> dict:
         classifier = pipeline("zero-shot-classification")
-        return classifier(
-            text,
-            candidate_labels=labels,
-        )
+        return classifier(text, candidate_labels=labels)
+    
+    def text_generation(self, prefix:str, max_length:int = 20, num_return_sequences:int = 1, model:str = "distilgpt2") -> array:
+        generator = pipeline("text-generation", model = model)
+        return generator(prefix, max_length = max_length, num_return_sequences = num_return_sequences)

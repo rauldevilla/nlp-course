@@ -22,4 +22,12 @@ class TransformersTestCase(unittest.TestCase):
         print(result)
         self.assertGreaterEqual(0.8, result['scores'][1])
 
+    def test_text_generation(self):
+        tranformer_example:TransformesExample = TransformesExample()
+        result:array = tranformer_example.text_generation("My country is")
+        print('-----')
+        print(result)
+        self.assertEqual(1, len(result))
+
+
 
