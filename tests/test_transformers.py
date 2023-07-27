@@ -17,7 +17,7 @@ class TransformersTestCase(unittest.TestCase):
 
     def test_classification(self):
         tranformer_example:TransformesExample = TransformesExample()
-        result:array = tranformer_example.classification("Our president sucks !", ["education", "politics", "business"])
+        result:array = tranformer_example.classification("Colombia president sucks !", ["education", "politics", "business"])
         print('-----')
         print(result)
         self.assertGreaterEqual(0.8, result['scores'][1])
