@@ -14,3 +14,7 @@ class TransformesExample:
     def text_generation(self, prefix:str, max_length:int = 20, num_return_sequences:int = 1, model:str = "distilgpt2") -> array:
         generator = pipeline("text-generation", model = model)
         return generator(prefix, max_length = max_length, num_return_sequences = num_return_sequences)
+
+    def fill_mask(self, masked_text:str, top_k:int = 1) -> array:
+        unmasker = pipeline("fill-mask")
+        return unmasker(masked_text, top_k = top_k)

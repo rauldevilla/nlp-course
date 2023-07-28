@@ -31,5 +31,10 @@ class TransformersTestCase(unittest.TestCase):
         print(result)
         self.assertEqual(2, len(result))
 
+    def test_fill_mask(self):
+        result:array = self.tranformer_example.fill_mask("This es a <mask> example")
+        print(result)
+        self.assertIsNotNone(result[0]["token_str"])
+
 
 
