@@ -26,5 +26,10 @@ class TransformersTestCase(unittest.TestCase):
         print(result)
         self.assertEqual(1, len(result))
 
+    def test_text_generation_2(self):
+        result:array = self.tranformer_example.text_generation("My country is", num_return_sequences = 2, max_length = 10)
+        print(result)
+        self.assertEqual(2, len(result))
+
 
 
